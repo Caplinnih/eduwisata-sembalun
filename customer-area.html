@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akun Saya — Rumah Eduwisata Sembalun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Poppins:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1B4332; --forest-deep:#122E22; --emerald:#2D6A4F; --emerald-light:#52A37B;
+  --brown:#8B5E34; --cream:#FBF6EC; --cream-dark:#F1E6CE; --gold:#E3A324; --gold-light:#F4C563;
+  --ink:#20291F; --ink-soft:#5B6B57; --line:rgba(27,67,50,0.14); --radius:16px; --red:#C1443A;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{ font-family:'Inter',sans-serif; background:var(--cream-dark); color:var(--ink); min-height:100vh;}
+h1,h2,h3,h4{ font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; color:var(--forest-deep);}
+p{ color:var(--ink-soft); line-height:1.6;}
+a{ text-decoration:none;}
+button{ font-family:'Poppins'; cursor:pointer;}
+.wrap{ max-width:900px; margin:0 auto; padding:0 24px;}
+
+.topbar{ background:var(--forest-deep); padding:18px 0;}
+.topbar .wrap{ display:flex; align-items:center; justify-content:space-between;}
+.topbar h1{ color:#fff; font-size:1.05rem;}
+.topbar a{ color:rgba(251,246,236,0.75); font-family:'Poppins'; font-size:0.85rem; font-weight:500;}
+.topbar a:hover{ color:#fff;}
+
+main{ padding:48px 0 100px;}
+
+/* ===== AUTH ===== */
+.auth-box{ max-width:420px; margin:40px auto; background:#fff; border-radius:var(--radius); border:1px solid var(--line); padding:34px;}
+.tab-switch{ display:flex; gap:8px; margin-bottom:24px; background:var(--cream-dark); padding:5px; border-radius:12px;}
+.tab-switch button{ flex:1; padding:10px; border:none; background:transparent; border-radius:9px; font-size:0.85rem; font-weight:600; color:var(--ink-soft);}
+.tab-switch button.active{ background:#fff; color:var(--forest-deep); box-shadow:0 4px 10px -4px rgba(27,67,50,0.25);}
+.field{ margin-bottom:16px;}
+.field label{ display:block; font-family:'Poppins'; font-size:0.8rem; font-weight:600; margin-bottom:7px; color:var(--forest-deep);}
+.field input{ width:100%; padding:11px 13px; border:1.5px solid var(--line); border-radius:10px; background:var(--cream); font-size:0.9rem;}
+.field input:focus{ outline:none; border-color:var(--emerald);}
+.auth-error{ font-size:0.8rem; color:var(--red); margin-bottom:14px; display:none;}
+.auth-btn{ width:100%; padding:12px; border-radius:10px; border:none; background:var(--gold); color:var(--forest-deep); font-weight:600; font-size:0.9rem;}
+.auth-btn:disabled{ opacity:0.5; cursor:not-allowed;}
+.auth-note{ text-align:center; font-size:0.78rem; color:var(--ink-soft); margin-top:16px;}
+
+/* ===== ACCOUNT DASHBOARD ===== */
+.account-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; flex-wrap:wrap; gap:14px;}
+.account-user{ display:flex; align-items:center; gap:14px;}
+.avatar{ width:48px; height:48px; border-radius:50%; background:var(--emerald); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Poppins'; font-weight:600;}
+.account-user h2{ font-size:1.15rem;}
+.account-user span{ font-size:0.82rem; color:var(--ink-soft); font-family:'Poppins';}
+.logout-btn{ padding:9px 18px; border-radius:999px; border:1.5px solid var(--line); background:#fff; font-size:0.82rem; font-weight:600; color:var(--ink-soft);}
+
+.booking-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:22px; margin-bottom:16px;}
+.booking-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:14px;}
+.booking-top h4{ font-size:1.02rem; margin-bottom:4px;}
+.booking-top span.code{ font-family:'Poppins'; font-size:0.76rem; color:var(--ink-soft);}
+.badge{ font-family:'Poppins'; font-size:0.72rem; font-weight:600; padding:5px 12px; border-radius:999px; white-space:nowrap;}
+.badge.confirmed{ background:rgba(45,106,79,0.12); color:var(--emerald);}
+.badge.pending{ background:rgba(227,163,36,0.15); color:var(--brown);}
+.badge.cancelled{ background:rgba(193,68,58,0.12); color:var(--red);}
+.booking-meta{ display:flex; gap:28px; flex-wrap:wrap; font-size:0.85rem; color:var(--ink-soft); margin-bottom:16px;}
+.booking-meta b{ color:var(--ink); font-weight:600;}
+.booking-foot{ display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid var(--line);}
+.booking-foot .total{ font-family:'Plus Jakarta Sans'; font-weight:800; color:var(--forest-deep);}
+.booking-foot button{ padding:9px 18px; border-radius:999px; border:none; background:var(--forest); color:#fff; font-size:0.8rem; font-weight:600;}
+
+.empty-state{ text-align:center; padding:60px 20px; color:var(--ink-soft);}
+
+/* ===== INVOICE MODAL ===== */
+.invoice-overlay{ position:fixed; inset:0; background:rgba(18,46,34,0.75); z-index:200; display:none; align-items:center; justify-content:center; padding:24px;}
+.invoice-overlay.open{ display:flex;}
+.invoice-box{ background:#fff; border-radius:16px; max-width:520px; width:100%; max-height:90vh; overflow-y:auto; padding:36px;}
+.invoice-head{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px; padding-bottom:20px; border-bottom:2px solid var(--forest-deep);}
+.invoice-head h2{ font-size:1.3rem;}
+.invoice-head .status{ text-align:right;}
+.invoice-row{ display:flex; justify-content:space-between; font-size:0.88rem; padding:9px 0; color:var(--ink-soft);}
+.invoice-row b{ color:var(--ink); font-weight:600;}
+.invoice-total{ display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:14px; border-top:1.5px solid var(--line);}
+.invoice-total span{ font-family:'Poppins'; font-size:0.85rem; color:var(--ink-soft);}
+.invoice-total b{ font-family:'Plus Jakarta Sans'; font-size:1.3rem; color:var(--forest-deep);}
+.invoice-actions{ display:flex; gap:12px; margin-top:26px;}
+.invoice-actions button{ flex:1; padding:12px; border-radius:10px; border:none; font-weight:600; font-size:0.86rem;}
+.invoice-print{ background:var(--gold); color:var(--forest-deep);}
+.invoice-close{ background:var(--cream-dark); color:var(--ink-soft);}
+
+@media print{
+  body *{ visibility:hidden;}
+  .invoice-box, .invoice-box *{ visibility:visible;}
+  .invoice-box{ position:fixed; inset:0; max-height:none; box-shadow:none;}
+  .invoice-actions{ display:none;}
+}
+
+.hidden{ display:none !important;}
+@media (max-width:640px){
+  .booking-meta{ gap:14px;}
+  .account-head{ align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <h1>Rumah Eduwisata Sembalun</h1>
+    <a href="index.html">← Kembali ke beranda</a>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- AUTH VIEW -->
+  <div id="authView">
+    <div class="auth-box">
+      <div class="tab-switch">
+        <button class="active" data-tab="login">Masuk</button>
+        <button data-tab="register">Daftar</button>
+      </div>
+
+      <div id="loginForm">
+        <div class="auth-error" id="loginError"></div>
+        <div class="field"><label>Email</label><input type="email" id="loginEmail" placeholder="nama@email.com"></div>
+        <div class="field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••"></div>
+        <button class="auth-btn" id="loginBtn">Masuk</button>
+        <p class="auth-note" id="loginNote">Mode demo — isi email & password apa saja untuk melihat contoh riwayat transaksi.</p>
+      </div>
+
+      <div id="registerForm" class="hidden">
+        <div class="auth-error" id="registerError"></div>
+        <div class="field"><label>Nama lengkap</label><input type="text" id="regName" placeholder="Nama sesuai identitas"></div>
+        <div class="field"><label>Email</label><input type="email" id="regEmail" placeholder="nama@email.com"></div>
+        <div class="field"><label>Nomor WhatsApp</label><input type="tel" id="regPhone" placeholder="08xxxxxxxxxx"></div>
+        <div class="field"><label>Password</label><input type="password" id="regPassword" placeholder="Minimal 8 karakter"></div>
+        <button class="auth-btn" id="registerBtn">Daftar</button>
+        <p class="auth-note" id="registerNote">Mode demo — akun tidak benar-benar disimpan sampai API disambungkan.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCOUNT VIEW -->
+  <div id="accountView" class="hidden">
+    <div class="account-head">
+      <div class="account-user">
+        <div class="avatar" id="avatarInit">U</div>
+        <div><h2 id="userNameLbl">Pengguna</h2><span id="userEmailLbl">—</span></div>
+      </div>
+      <button class="logout-btn" id="logoutBtn">Keluar</button>
+    </div>
+    <h3 style="margin-bottom:16px; font-size:1.02rem;">Riwayat Transaksi</h3>
+    <div id="bookingList"></div>
+  </div>
+</main>
+
+<div class="invoice-overlay" id="invoiceOverlay">
+  <div class="invoice-box" id="invoiceBox">
+    <div class="invoice-head">
+      <div>
+        <h2>Invoice</h2>
+        <p style="margin-top:4px;">Rumah Eduwisata Sembalun</p>
+      </div>
+      <div class="status">
+        <span class="badge confirmed" id="invStatus">Terkonfirmasi</span>
+        <p style="margin-top:8px; font-family:'Poppins'; font-size:0.78rem;" id="invCode">SBL-000000</p>
+      </div>
+    </div>
+    <div class="invoice-row"><span>Nama pemesan</span><b id="invName">—</b></div>
+    <div class="invoice-row"><span>Layanan</span><b id="invService">—</b></div>
+    <div class="invoice-row"><span>Tanggal kunjungan</span><b id="invDate">—</b></div>
+    <div class="invoice-row"><span>Jumlah</span><b id="invQty">—</b></div>
+    <div class="invoice-row"><span>Harga satuan</span><b id="invUnit">—</b></div>
+    <div class="invoice-total"><span>Total pembayaran</span><b id="invTotal">Rp 0</b></div>
+    <div class="invoice-actions">
+      <button class="invoice-print" id="invoicePdfBtn">📄 Unduh PDF</button>
+      <button class="invoice-print" id="invoicePrintBtn" style="background:var(--cream-dark); color:var(--ink-soft);">🖨 Cetak</button>
+      <button class="invoice-close" id="invoiceCloseBtn">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ====== KONFIGURASI API ======
+const API_BASE_URL = '';
+const idr = n => 'Rp ' + Number(n || 0).toLocaleString('id-ID');
+
+let authToken = null;
+let currentUser = null;
+
+async function apiPost(route, body){
+  const res = await fetch(`${API_BASE_URL}?route=${route}`, {
+    method:'POST', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body: JSON.stringify(body)
+  });
+  const json = await res.json();
+  if(!json.success) throw new Error(json.message);
+  return json.data;
+}
+async function apiGet(route, token){
+  const url = `${API_BASE_URL}?route=${route}` + (token ? `&token=${token}` : '');
+  const res = await fetch(url);
+  const json = await res.json();
+  if(!json.success) throw new Error(json.message);
+  return json.data;
+}
+
+if(!API_BASE_URL){
+  document.getElementById('loginNote').textContent = 'Mode demo — isi email & password apa saja untuk melihat contoh riwayat transaksi.';
+  document.getElementById('registerNote').textContent = 'Mode demo — form ini tidak menyimpan data sampai API disambungkan.';
+} else {
+  document.getElementById('loginNote').textContent = '';
+  document.getElementById('registerNote').textContent = '';
+}
+
+document.querySelectorAll('.tab-switch button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-switch button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('loginForm').classList.toggle('hidden', btn.dataset.tab !== 'login');
+    document.getElementById('registerForm').classList.toggle('hidden', btn.dataset.tab !== 'register');
+  });
+});
+
+const FALLBACK_BOOKINGS = [
+  { id:'SBL-482910', service_name:'Paket Sekolah', visit_date:'2026-07-14', qty:26, unit_price:65000, total:1690000, status:'confirmed', payment_status:'paid' },
+  { id:'SBL-482611', service_name:'Homestay Bale Sasak', visit_date:'2026-06-02', qty:2, unit_price:180000, total:360000, status:'pending', payment_status:'waiting_verification' },
+  { id:'SBL-481920', service_name:'Paket Harian', visit_date:'2026-05-11', qty:4, unit_price:85000, total:340000, status:'cancelled', payment_status:'rejected' }
+];
+
+document.getElementById('loginBtn').addEventListener('click', async () => {
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  const errEl = document.getElementById('loginError');
+  const btn = document.getElementById('loginBtn');
+  errEl.style.display = 'none';
+  if(!email || !password){ errEl.textContent = 'Email dan password wajib diisi'; errEl.style.display = 'block'; return; }
+
+  btn.disabled = true; btn.textContent = 'Memeriksa…';
+  try {
+    if(API_BASE_URL){
+      const result = await apiPost('auth/login', { email, password });
+      authToken = result.token;
+      currentUser = result.user;
+      showAccount();
+      const bookings = await apiGet('booking/list', authToken);
+      renderBookings(bookings);
+    } else {
+      currentUser = { name: email.split('@')[0], email: email };
+      showAccount();
+      renderBookings(FALLBACK_BOOKINGS);
+    }
+  } catch (err) {
+    errEl.textContent = err.message || 'Login gagal';
+    errEl.style.display = 'block';
+  } finally {
+    btn.disabled = false; btn.textContent = 'Masuk';
+  }
+});
+
+document.getElementById('registerBtn').addEventListener('click', async () => {
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const phone = document.getElementById('regPhone').value.trim();
+  const password = document.getElementById('regPassword').value;
+  const errEl = document.getElementById('registerError');
+  const btn = document.getElementById('registerBtn');
+  errEl.style.display = 'none';
+  if(!name || !email || !password){ errEl.textContent = 'Nama, email, dan password wajib diisi'; errEl.style.display = 'block'; return; }
+  if(password.length < 8){ errEl.textContent = 'Password minimal 8 karakter'; errEl.style.display = 'block'; return; }
+
+  btn.disabled = true; btn.textContent = 'Mendaftarkan…';
+  try {
+    if(API_BASE_URL){
+      await apiPost('auth/register', { name, email, phone, password });
+      const result = await apiPost('auth/login', { email, password });
+      authToken = result.token;
+      currentUser = result.user;
+      showAccount();
+      const bookings = await apiGet('booking/list', authToken);
+      renderBookings(bookings);
+    } else {
+      currentUser = { name: name, email: email };
+      showAccount();
+      renderBookings(FALLBACK_BOOKINGS);
+    }
+  } catch (err) {
+    errEl.textContent = err.message || 'Registrasi gagal';
+    errEl.style.display = 'block';
+  } finally {
+    btn.disabled = false; btn.textContent = 'Daftar';
+  }
+});
+
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  authToken = null; currentUser = null;
+  document.getElementById('accountView').classList.add('hidden');
+  document.getElementById('authView').classList.remove('hidden');
+});
+
+function showAccount(){
+  document.getElementById('authView').classList.add('hidden');
+  document.getElementById('accountView').classList.remove('hidden');
+  document.getElementById('userNameLbl').textContent = currentUser.name || 'Pengguna';
+  document.getElementById('userEmailLbl').textContent = currentUser.email || '';
+  document.getElementById('avatarInit').textContent = (currentUser.name || 'U').charAt(0).toUpperCase();
+}
+
+const STATUS_LABEL = {
+  confirmed: ['confirmed','Terkonfirmasi'], pending: ['pending','Menunggu konfirmasi'], cancelled: ['cancelled','Dibatalkan'], completed: ['confirmed','Selesai']
+};
+
+let bookingsData = [];
+function renderBookings(list){
+  bookingsData = list;
+  const container = document.getElementById('bookingList');
+  container.innerHTML = '';
+  if(!list.length){
+    container.innerHTML = '<div class="empty-state">Belum ada riwayat transaksi. Yuk mulai booking paket eduwisata pertamamu!</div>';
+    return;
+  }
+  list.forEach(b => {
+    const [cls, label] = STATUS_LABEL[b.status] || ['pending', b.status];
+    const tanggal = b.visit_date ? new Date(b.visit_date).toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' }) : '-';
+    const div = document.createElement('div');
+    div.className = 'booking-card';
+    div.innerHTML = `
+      <div class="booking-top">
+        <div><h4>${b.service_name}</h4><span class="code">${b.id}</span></div>
+        <span class="badge ${cls}">${label}</span>
+      </div>
+      <div class="booking-meta">
+        <div>Tanggal <b>${tanggal}</b></div>
+        <div>Jumlah <b>${b.qty} orang</b></div>
+      </div>
+      <div class="booking-foot">
+        <span class="total">${idr(b.total)}</span>
+        <button data-id="${b.id}">Lihat Invoice</button>
+      </div>`;
+    div.querySelector('button').addEventListener('click', () => openInvoice(b));
+    container.appendChild(div);
+  });
+}
+
+const invoiceOverlay = document.getElementById('invoiceOverlay');
+let currentInvoiceBooking = null;
+function openInvoice(b){
+  currentInvoiceBooking = b;
+  const [cls, label] = STATUS_LABEL[b.status] || ['pending', b.status];
+  document.getElementById('invStatus').className = 'badge ' + cls;
+  document.getElementById('invStatus').textContent = label;
+  document.getElementById('invCode').textContent = b.id;
+  document.getElementById('invName').textContent = currentUser.name || '-';
+  document.getElementById('invService').textContent = b.service_name;
+  document.getElementById('invDate').textContent = b.visit_date ? new Date(b.visit_date).toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' }) : '-';
+  document.getElementById('invQty').textContent = b.qty + ' orang';
+  document.getElementById('invUnit').textContent = idr(b.unit_price);
+  document.getElementById('invTotal').textContent = idr(b.total);
+  invoiceOverlay.classList.add('open');
+}
+document.getElementById('invoiceCloseBtn').addEventListener('click', () => invoiceOverlay.classList.remove('open'));
+document.getElementById('invoicePrintBtn').addEventListener('click', () => window.print());
+document.getElementById('invoicePdfBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('invoicePdfBtn');
+  if(!API_BASE_URL){
+    alert('Fitur unduh PDF butuh koneksi API. Pakai tombol "Cetak" untuk sementara (pilih "Simpan sebagai PDF" di dialog cetak).');
+    return;
+  }
+  btn.disabled = true; btn.textContent = 'Membuat PDF…';
+  try {
+    const result = await apiGet('invoice/generate&id=' + encodeURIComponent(currentInvoiceBooking.id), authToken);
+    window.open(result.url, '_blank');
+  } catch (err) {
+    alert('Gagal membuat PDF: ' + err.message);
+  } finally {
+    btn.disabled = false; btn.textContent = '📄 Unduh PDF';
+  }
+});
+invoiceOverlay.addEventListener('click', (e) => { if(e.target === invoiceOverlay) invoiceOverlay.classList.remove('open'); });
+</script>
+</body>
+</html>
