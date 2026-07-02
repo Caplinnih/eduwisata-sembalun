@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard-admin-sembalun.html
+Disallow: /customer-area.html
+
+Sitemap: https://eduwisatasembalun.id/sitemap.xml
