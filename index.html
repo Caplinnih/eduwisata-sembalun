@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumah Eduwisata Sembalun — Belajar, Menikmati, dan Mengalami Sembalun</title>
+<meta name="description" content="Rumah Eduwisata Sembalun menghubungkan wisatawan, sekolah, dan komunitas dengan pengalaman belajar pertanian, homestay warga, kuliner khas, dan budaya Sasak di kaki Gunung Rinjani, Lombok Timur.">
+<meta name="keywords" content="eduwisata sembalun, wisata edukasi lombok, homestay sembalun, paket wisata rinjani, wisata pertanian lombok, wisata sekolah sembalun">
+<meta name="author" content="Rumah Eduwisata Sembalun">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eduwisatasembalun.id/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rumah Eduwisata Sembalun — Belajar, Menikmati, dan Mengalami Sembalun">
+<meta property="og:description" content="Portal eduwisata terintegrasi Sembalun: paket wisata edukasi, homestay warga, kuliner khas, dan booking online — di kaki Gunung Rinjani, Lombok Timur.">
+<meta property="og:url" content="https://eduwisatasembalun.id/">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="Rumah Eduwisata Sembalun">
+<!-- TODO: tambahkan <meta property="og:image" content="URL-foto-Rinjani-Sembalun.jpg"> setelah foto asli tersedia -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rumah Eduwisata Sembalun">
+<meta name="twitter:description" content="Belajar, menikmati, dan mengalami Sembalun — eduwisata, pertanian, homestay, dan kuliner di kaki Rinjani.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1B4332;
+  --forest-deep:#122E22;
+  --emerald:#2D6A4F;
+  --emerald-light:#52A37B;
+  --brown:#8B5E34;
+  --brown-light:#B08256;
+  --cream:#FBF6EC;
+  --cream-dark:#F1E6CE;
+  --gold:#E3A324;
+  --gold-light:#F4C563;
+  --ink:#20291F;
+  --ink-soft:#5B6B57;
+  --line: rgba(27,67,50,0.14);
+  --radius: 18px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:'Plus Jakarta Sans', sans-serif;
+  font-weight:700;
+  line-height:1.15;
+  color:var(--forest-deep);
+}
+.eyebrow{
+  font-family:'Poppins', sans-serif;
+  font-weight:600;
+  font-size:0.78rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--brown);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.eyebrow::before{
+  content:"";
+  width:22px; height:1.5px;
+  background:var(--gold);
+  display:inline-block;
+}
+p{color:var(--ink-soft); line-height:1.7;}
+a{text-decoration:none; color:inherit;}
+img{max-width:100%; display:block;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 32px;}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 28px; border-radius:999px;
+  font-family:'Poppins', sans-serif; font-weight:600; font-size:0.92rem;
+  cursor:pointer; border:none; transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  white-space:nowrap;
+}
+.btn-gold{ background:var(--gold); color:var(--forest-deep); box-shadow:0 10px 24px -10px rgba(227,163,36,0.65);}
+.btn-gold:hover{ transform:translateY(-3px); box-shadow:0 16px 30px -10px rgba(227,163,36,0.75);}
+.btn-outline{ background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.55); backdrop-filter:blur(6px);}
+.btn-outline:hover{ background:rgba(255,255,255,0.12); transform:translateY(-3px);}
+.btn-forest{ background:var(--forest); color:#fff;}
+.btn-forest:hover{ background:var(--forest-deep); transform:translateY(-3px);}
+
+/* ===== NAVBAR ===== */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:22px 0; transition:all .4s ease;
+}
+header.solid{
+  padding:14px 0; background:rgba(251,246,236,0.92); backdrop-filter:blur(14px);
+  box-shadow:0 6px 24px -12px rgba(27,67,50,0.25);
+}
+.nav-inner{ display:flex; align-items:center; justify-content:space-between;}
+.logo{ display:flex; align-items:center; gap:10px; font-family:'Plus Jakarta Sans'; font-weight:800; font-size:1.15rem; color:#fff; transition:color .4s ease;}
+header.solid .logo{ color:var(--forest-deep);}
+.logo-mark{ width:38px; height:38px;}
+.nav-links{ display:flex; align-items:center; gap:36px; list-style:none;}
+.nav-links a{ font-family:'Poppins'; font-size:0.9rem; font-weight:500; color:rgba(255,255,255,0.92); transition:color .4s ease; position:relative;}
+header.solid .nav-links a{ color:var(--ink);}
+.nav-links a::after{ content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:var(--gold); transition:width .25s ease;}
+.nav-links a:hover::after{ width:100%;}
+.nav-cta{ display:flex; align-items:center; gap:14px;}
+.hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; z-index:200;}
+.hamburger span{ width:26px; height:2px; background:#fff; transition:all .3s ease;}
+header.solid .hamburger span{ background:var(--forest-deep);}
+.hamburger.active span:nth-child(1){ transform:translateY(7px) rotate(45deg);}
+.hamburger.active span:nth-child(2){ opacity:0;}
+.hamburger.active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg);}
+
+.mobile-menu{
+  position:fixed; inset:0; background:var(--forest-deep); z-index:150;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px;
+  transform:translateY(-100%); transition:transform .45s cubic-bezier(.65,0,.35,1);
+}
+.mobile-menu.open{ transform:translateY(0);}
+.mobile-menu a{ font-family:'Plus Jakarta Sans'; font-size:1.6rem; font-weight:600; color:var(--cream);}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative; height:100vh; min-height:640px; display:flex; align-items:flex-end;
+  overflow:hidden;
+  background:linear-gradient(180deg,#7FB9A6 0%, #4F9578 32%, #2D6A4F 62%, #1B4332 100%);
+}
+.hero-sky{ position:absolute; inset:0; overflow:hidden;}
+.sun{
+  position:absolute; top:14%; left:50%; width:220px; height:220px; border-radius:50%;
+  background:radial-gradient(circle, var(--gold-light) 0%, var(--gold) 55%, transparent 72%);
+  transform:translateX(-50%); opacity:0.9; filter:blur(1px);
+}
+.ridge{ position:absolute; left:0; width:100%; bottom:0;}
+.ridge svg{ width:100%; height:auto; display:block;}
+.hero-content{ position:relative; z-index:5; width:100%; padding-bottom:110px;}
+.hero-grid{ display:flex; justify-content:space-between; align-items:flex-end; gap:40px; flex-wrap:wrap;}
+.hero-text{ max-width:640px;}
+.hero-text .eyebrow{ color:var(--gold-light);}
+.hero-text .eyebrow::before{ background:var(--gold-light);}
+.hero-text h1{
+  font-size:clamp(2.4rem, 5vw, 3.8rem); color:#fff; margin:18px 0 20px; letter-spacing:-0.01em;
+}
+.hero-text p{ color:rgba(255,255,255,0.86); font-size:1.05rem; max-width:520px; margin-bottom:32px;}
+.hero-cta{ display:flex; gap:16px; flex-wrap:wrap;}
+.hero-stats{
+  display:flex; gap:0; background:rgba(251,246,236,0.14); border:1px solid rgba(255,255,255,0.25);
+  backdrop-filter:blur(14px); border-radius:20px; overflow:hidden;
+}
+.hero-stats div{ padding:22px 28px; text-align:left;}
+.hero-stats div + div{ border-left:1px solid rgba(255,255,255,0.2);}
+.hero-stats .num{ font-family:'Plus Jakarta Sans'; font-size:1.9rem; font-weight:800; color:#fff;}
+.hero-stats .lbl{ font-size:0.78rem; color:rgba(255,255,255,0.75); font-family:'Poppins'; margin-top:4px;}
+.scroll-cue{
+  position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:6;
+  color:rgba(255,255,255,0.8); font-family:'Poppins'; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+}
+.scroll-cue .line{ width:1.5px; height:34px; background:rgba(255,255,255,0.5); position:relative; overflow:hidden;}
+.scroll-cue .line::after{ content:""; position:absolute; top:-100%; left:0; width:100%; height:100%; background:var(--gold-light); animation:scrollDrop 1.8s infinite;}
+@keyframes scrollDrop{ to{ top:100%; } }
+
+/* ===== reveal ===== */
+.reveal{ opacity:0; transform:translateY(36px); transition:opacity .8s ease, transform .8s ease;}
+.reveal.in{ opacity:1; transform:translateY(0);}
+.reveal-left{ opacity:0; transform:translateX(-36px); transition:opacity .8s ease, transform .8s ease;}
+.reveal-left.in{ opacity:1; transform:translateX(0);}
+.reveal-right{ opacity:0; transform:translateX(36px); transition:opacity .8s ease, transform .8s ease;}
+.reveal-right.in{ opacity:1; transform:translateX(0);}
+.stagger.in > *{ transition-delay:calc(var(--i) * 90ms);}
+
+section{ position:relative; padding:110px 0;}
+.section-head{ max-width:640px; margin-bottom:56px;}
+.section-head h2{ font-size:clamp(1.9rem,3.4vw,2.6rem); margin-top:16px;}
+
+/* ===== TENTANG (timeline) ===== */
+.about{ background:var(--cream);}
+.about-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+.about-lead p{ font-size:1.02rem; margin-bottom:18px;}
+.timeline{ position:relative; padding-left:38px;}
+.timeline::before{ content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px; background:var(--line);}
+.tl-item{ position:relative; padding-bottom:38px;}
+.tl-item:last-child{ padding-bottom:0;}
+.tl-item::before{
+  content:""; position:absolute; left:-38px; top:2px; width:20px; height:20px; border-radius:50%;
+  background:var(--cream); border:2.5px solid var(--gold);
+}
+.tl-item h4{ font-size:1.08rem; margin-bottom:6px;}
+.tl-item span.tl-tag{ font-family:'Poppins'; font-size:0.72rem; color:var(--emerald); font-weight:600; letter-spacing:0.06em; text-transform:uppercase;}
+
+/* ===== PAKET (terraced cards) ===== */
+.paket{ background:var(--forest-deep); color:#fff;}
+.paket .eyebrow{ color:var(--gold-light);}
+.paket .eyebrow::before{ background:var(--gold-light);}
+.paket .section-head h2{ color:#fff;}
+.paket .section-head p{ color:rgba(255,255,255,0.7);}
+.terrace-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
+.terrace-card{
+  background:rgba(251,246,236,0.06); border:1px solid rgba(255,255,255,0.12);
+  border-radius:var(--radius); padding:30px 26px 26px; position:relative; overflow:hidden;
+  transition:transform .35s ease, background .35s ease, border-color .35s ease;
+}
+.terrace-card:hover{ transform:translateY(-8px); background:rgba(251,246,236,0.1); border-color:rgba(227,163,36,0.5);}
+.terrace-steps{ display:flex; gap:4px; margin-bottom:18px;}
+.terrace-steps span{ height:6px; border-radius:2px; background:var(--gold); opacity:0.35;}
+.terrace-steps span:nth-child(1){ width:28px; opacity:1;}
+.terrace-steps span:nth-child(2){ width:20px; opacity:0.65;}
+.terrace-steps span:nth-child(3){ width:14px; opacity:0.4;}
+.terrace-card h3{ color:#fff; font-size:1.2rem; margin-bottom:10px;}
+.terrace-card p{ color:rgba(255,255,255,0.68); font-size:0.92rem; margin-bottom:22px;}
+.terrace-meta{ display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.14); padding-top:16px;}
+.terrace-meta .price{ font-family:'Plus Jakarta Sans'; font-weight:700; color:var(--gold-light);}
+.terrace-meta a{ font-family:'Poppins'; font-size:0.82rem; font-weight:600; color:#fff; display:flex; align-items:center; gap:6px;}
+
+/* ===== PERTANIAN ===== */
+.tani{ background:var(--cream-dark);}
+.tani-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:18px;}
+.tani-card{
+  background:var(--cream); border-radius:16px; padding:26px 20px; text-align:left;
+  border:1px solid var(--line); transition:transform .3s ease, box-shadow .3s ease;
+}
+.tani-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px -20px rgba(27,67,50,0.35);}
+.tani-icon{ width:44px; height:44px; border-radius:12px; background:var(--emerald); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+.tani-card h4{ font-size:1rem; margin-bottom:6px;}
+.tani-card p{ font-size:0.86rem;}
+
+/* ===== HOMESTAY ===== */
+.homestay{ background:var(--cream);}
+.hs-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+.hs-card{ border-radius:var(--radius); overflow:hidden; background:#fff; border:1px solid var(--line); transition:transform .35s ease, box-shadow .35s ease;}
+.hs-card:hover{ transform:translateY(-8px); box-shadow:0 26px 48px -22px rgba(27,67,50,0.3);}
+.hs-photo{ height:200px; position:relative; background:linear-gradient(135deg,var(--emerald-light),var(--forest));}
+.hs-photo .tag{ position:absolute; top:14px; left:14px; background:rgba(251,246,236,0.92); color:var(--forest-deep); font-family:'Poppins'; font-size:0.7rem; font-weight:600; padding:6px 12px; border-radius:999px;}
+.hs-body{ padding:22px;}
+.hs-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;}
+.hs-top h4{ font-size:1.05rem;}
+.hs-rating{ display:flex; align-items:center; gap:4px; font-family:'Poppins'; font-size:0.82rem; font-weight:600; color:var(--brown);}
+.hs-loc{ font-size:0.85rem; color:var(--ink-soft); margin-bottom:14px;}
+.hs-foot{ display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid var(--line);}
+.hs-foot .price{ font-family:'Plus Jakarta Sans'; font-weight:700; color:var(--forest-deep);}
+.hs-foot .price span{ font-family:'Inter'; font-weight:400; color:var(--ink-soft); font-size:0.8rem;}
+
+/* ===== KULINER strip ===== */
+.kuliner{ background:var(--brown); color:#fff;}
+.kuliner .eyebrow{ color:var(--gold-light);}
+.kuliner .eyebrow::before{ background:var(--gold-light);}
+.kuliner .section-head h2{ color:#fff;}
+.kuliner .section-head p{ color:rgba(255,255,255,0.75);}
+.menu-row{ display:flex; flex-direction:column; gap:0;}
+.menu-item{ display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-bottom:1px solid rgba(255,255,255,0.18); gap:24px;}
+.menu-item:first-child{ border-top:1px solid rgba(255,255,255,0.18);}
+.menu-item h4{ color:#fff; font-size:1.08rem; margin-bottom:6px;}
+.menu-item p{ color:rgba(255,255,255,0.65); font-size:0.88rem; max-width:480px;}
+.menu-item .m-price{ font-family:'Plus Jakarta Sans'; font-weight:700; color:var(--gold-light); white-space:nowrap;}
+
+/* ===== EVENT ===== */
+.event{ background:var(--cream);}
+.event-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+.event-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:transform .35s ease, box-shadow .35s ease;}
+.event-card:hover{ transform:translateY(-8px); box-shadow:0 24px 44px -22px rgba(27,67,50,0.3);}
+.event-banner{ height:140px; position:relative; background:linear-gradient(135deg,var(--gold-light),var(--brown));}
+.event-date{ position:absolute; top:16px; left:16px; background:#fff; border-radius:12px; padding:8px 14px; text-align:center; line-height:1.1;}
+.event-date .d{ font-family:'Plus Jakarta Sans'; font-weight:800; font-size:1.15rem; color:var(--forest-deep);}
+.event-date .m{ font-family:'Poppins'; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--brown);}
+.event-body{ padding:22px;}
+.event-cat{ font-family:'Poppins'; font-size:0.7rem; font-weight:600; color:var(--emerald); text-transform:uppercase; letter-spacing:0.06em;}
+.event-body h4{ font-size:1.08rem; margin:8px 0 8px;}
+.event-body p{ font-size:0.88rem; margin-bottom:18px;}
+.event-foot{ display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid var(--line);}
+.event-foot span{ font-size:0.82rem; color:var(--ink-soft);}
+.event-foot a{ font-family:'Poppins'; font-size:0.82rem; font-weight:600; color:var(--forest);}
+
+/* ===== BLOG ===== */
+.blog{ background:var(--cream-dark);}
+.blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+.blog-card{ background:var(--cream); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); transition:transform .35s ease, box-shadow .35s ease;}
+.blog-card:hover{ transform:translateY(-8px); box-shadow:0 24px 44px -22px rgba(27,67,50,0.3);}
+.blog-photo{ height:170px; background:linear-gradient(135deg,var(--emerald),var(--forest-deep));}
+.blog-body{ padding:22px;}
+.blog-tag{ display:inline-block; font-family:'Poppins'; font-size:0.68rem; font-weight:600; color:var(--forest-deep); background:var(--gold-light); padding:4px 12px; border-radius:999px; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.04em;}
+.blog-body h4{ font-size:1.04rem; margin-bottom:8px; line-height:1.35;}
+.blog-body p{ font-size:0.86rem; margin-bottom:14px;}
+.blog-body a{ font-family:'Poppins'; font-size:0.82rem; font-weight:600; color:var(--brown);}
+
+/* ===== GALERI ===== */
+.galeri{ background:var(--cream);}
+.gallery-grid{ display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:120px; gap:14px;}
+.gallery-item{ border-radius:14px; cursor:pointer; position:relative; overflow:hidden; transition:transform .3s ease; display:flex; align-items:flex-end; padding:14px;}
+.gallery-item:hover{ transform:scale(0.97);}
+.gallery-item span{ position:relative; z-index:2; color:#fff; font-family:'Poppins'; font-size:0.78rem; font-weight:600;}
+.gallery-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(18,46,34,0.65)); z-index:1;}
+.g1{ grid-column:span 2; grid-row:span 2; background:linear-gradient(135deg,var(--emerald-light),var(--forest));}
+.g2{ background:linear-gradient(135deg,var(--gold-light),var(--brown));}
+.g3{ background:linear-gradient(135deg,var(--brown-light),var(--forest-deep));}
+.g4{ grid-row:span 2; background:linear-gradient(135deg,var(--forest),var(--emerald));}
+.g5{ background:linear-gradient(135deg,var(--emerald),var(--gold));}
+.g6{ grid-column:span 2; background:linear-gradient(135deg,var(--brown),var(--forest-deep));}
+
+.lightbox{ position:fixed; inset:0; background:rgba(18,46,34,0.92); z-index:200; display:none; align-items:center; justify-content:center; padding:40px;}
+.lightbox.open{ display:flex;}
+.lightbox-box{ max-width:720px; width:100%; aspect-ratio:16/10; border-radius:20px; display:flex; align-items:flex-end; padding:28px; position:relative;}
+.lightbox-box span{ position:relative; z-index:2; color:#fff; font-family:'Plus Jakarta Sans'; font-weight:700; font-size:1.3rem;}
+.lightbox-box::after{ content:""; position:absolute; inset:0; border-radius:20px; background:linear-gradient(180deg, transparent 40%, rgba(18,46,34,0.7)); z-index:1;}
+.lightbox-close{ position:absolute; top:28px; right:32px; width:42px; height:42px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.5); background:transparent; color:#fff; font-size:1.2rem; cursor:pointer; z-index:5;}
+
+/* ===== TESTIMONI ===== */
+.testi{ background:var(--cream-dark);}
+.testi-wrap{ max-width:760px; margin:0 auto; text-align:center; position:relative;}
+.testi-quote{ font-family:'Plus Jakarta Sans'; font-size:clamp(1.2rem,2.4vw,1.5rem); color:var(--forest-deep); font-weight:600; line-height:1.5; margin-bottom:26px; min-height:140px;}
+.testi-person{ font-family:'Poppins'; font-weight:600; font-size:0.95rem;}
+.testi-role{ font-size:0.82rem; color:var(--ink-soft); margin-top:2px;}
+.testi-dots{ display:flex; justify-content:center; gap:10px; margin-top:32px;}
+.testi-dots button{ width:9px; height:9px; border-radius:50%; border:none; background:var(--line); cursor:pointer; transition:all .3s ease;}
+.testi-dots button.active{ background:var(--gold); width:26px; border-radius:5px;}
+
+/* ===== KONTAK / FOOTER ===== */
+footer{ background:var(--forest-deep); color:rgba(251,246,236,0.85); padding:90px 0 30px;}
+.foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:60px; border-bottom:1px solid rgba(255,255,255,0.12);}
+.foot-brand h3{ color:#fff; font-size:1.3rem; margin-bottom:14px;}
+.foot-brand p{ color:rgba(251,246,236,0.62); font-size:0.9rem; margin-bottom:22px; max-width:280px;}
+.foot-social{ display:flex; gap:12px;}
+.foot-social a{ width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+.foot-social a:hover{ background:var(--gold); border-color:var(--gold);}
+.foot-col h5{ font-family:'Poppins'; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-light); margin-bottom:18px;}
+.foot-col a, .foot-col p{ display:block; font-size:0.9rem; color:rgba(251,246,236,0.68); margin-bottom:12px; transition:color .25s ease;}
+.foot-col a:hover{ color:#fff;}
+.foot-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:26px; font-size:0.8rem; color:rgba(251,246,236,0.5); flex-wrap:wrap; gap:12px;}
+
+.wa-float{
+  position:fixed; bottom:26px; right:26px; z-index:80; width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 26px -8px rgba(37,211,102,0.6);
+  animation:floaty 3s ease-in-out infinite;
+}
+@keyframes floaty{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px){
+  .nav-links, .nav-cta .btn-outline{ display:none;}
+  .hamburger{ display:flex;}
+  .about-grid{ grid-template-columns:1fr; gap:40px;}
+  .terrace-grid{ grid-template-columns:repeat(2,1fr);}
+  .tani-grid{ grid-template-columns:repeat(2,1fr);}
+  .hs-grid{ grid-template-columns:repeat(2,1fr);}
+  .event-grid, .blog-grid{ grid-template-columns:repeat(2,1fr);}
+  .gallery-grid{ grid-template-columns:repeat(3,1fr); grid-auto-rows:100px;}
+  .foot-grid{ grid-template-columns:1fr 1fr;}
+}
+@media (max-width: 640px){
+  .wrap{ padding:0 20px;}
+  section{ padding:76px 0;}
+  .terrace-grid, .tani-grid, .hs-grid, .event-grid, .blog-grid{ grid-template-columns:1fr;}
+  .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:110px;}
+  .g1, .g6{ grid-column:span 2;}
+  .hero-stats{ flex-wrap:wrap;}
+  .hero-stats div{ padding:16px 20px;}
+  .menu-item{ flex-direction:column; align-items:flex-start; gap:8px;}
+  .foot-grid{ grid-template-columns:1fr; gap:32px;}
+  .nav-cta .btn-gold{ padding:10px 18px; font-size:0.82rem;}
+}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+        <path d="M4 30L14 12L20 22L26 10L36 30H4Z" fill="currentColor" opacity="0.9"/>
+      </svg>
+      Rumah Eduwisata Sembalun
+    </a>
+    <ul class="nav-links">
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#paket">Paket</a></li>
+      <li><a href="#pertanian">Pertanian</a></li>
+      <li><a href="#homestay">Homestay</a></li>
+      <li><a href="#kuliner">Kuliner</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="customer-area.html" class="btn btn-outline">Akun Saya</a>
+      <a href="#kontak" class="btn btn-gold">Booking Sekarang</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#tentang">Tentang</a>
+  <a href="#paket">Paket</a>
+  <a href="#pertanian">Pertanian</a>
+  <a href="#homestay">Homestay</a>
+  <a href="#kuliner">Kuliner</a>
+  <a href="#galeri">Galeri</a>
+  <a href="#kontak">Kontak</a>
+  <a href="customer-area.html">Akun Saya</a>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-sky">
+    <div class="sun" id="parallaxSun"></div>
+    <div class="ridge" style="opacity:0.35; bottom:40px;">
+      <svg viewBox="0 0 1440 260" preserveAspectRatio="none"><path fill="#FBF6EC" d="M0 200 L120 120 L260 190 L420 70 L600 160 L760 40 L960 150 L1140 90 L1300 170 L1440 110 L1440 260 L0 260 Z"/></svg>
+    </div>
+    <div class="ridge" id="parallaxRidge2" style="opacity:0.55; bottom:10px;">
+      <svg viewBox="0 0 1440 240" preserveAspectRatio="none"><path fill="#122E22" d="M0 180 L160 90 L320 170 L520 40 L700 140 L880 60 L1080 160 L1260 100 L1440 150 L1440 240 L0 240 Z"/></svg>
+    </div>
+    <div class="ridge" id="parallaxRidge1">
+      <svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path fill="#FBF6EC" d="M0 160 L100 60 L220 130 L360 20 L520 110 L680 30 L860 120 L1040 50 L1220 130 L1440 70 L1440 200 L0 200 Z"/></svg>
+    </div>
+  </div>
+
+  <div class="hero-content wrap">
+    <div class="hero-grid">
+      <div class="hero-text reveal" id="heroText">
+        <span class="eyebrow">Sembalun, Lombok Timur</span>
+        <h1>Belajar, Menikmati, dan Mengalami Sembalun</h1>
+        <p>Satu ekosistem eduwisata di kaki Rinjani — kelas pertanian, homestay warga, kuliner khas, dan pengalaman belajar yang menghidupkan desa.</p>
+        <div class="hero-cta">
+          <a href="#kontak" class="btn btn-gold">Booking Sekarang</a>
+          <a href="#paket" class="btn btn-outline">Lihat Paket</a>
+        </div>
+      </div>
+      <div class="hero-stats reveal" id="heroStats" style="transition-delay:.2s">
+        <div><div class="num" data-count="18">0</div><div class="lbl">Paket Eduwisata</div></div>
+        <div><div class="num" data-count="42">0</div><div class="lbl">Homestay Mitra</div></div>
+        <div><div class="num" data-count="6200">0</div><div class="lbl">Pelajar Terlibat</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Gulir</span><span class="line"></span></div>
+</section>
+
+<section class="about" id="tentang">
+  <div class="wrap about-grid">
+    <div class="about-lead reveal-left">
+      <span class="eyebrow">Tentang kami</span>
+      <h2 style="margin:16px 0 20px; font-size:clamp(1.9rem,3.2vw,2.4rem);">Dari desa penggembala menuju pusat eduwisata Rinjani</h2>
+      <p>Rumah Eduwisata Sembalun lahir dari kolaborasi warga, petani, dan pengelola homestay untuk membuka Sembalun kepada dunia — bukan sekadar sebagai jalur pendakian, tapi sebagai ruang belajar hidup berdampingan dengan alam.</p>
+      <p>Visi kami: menjadikan Sembalun sebagai model eduwisata berkelanjutan di Indonesia. Misi kami dijalankan lewat program edukasi pertanian, pelestarian budaya Sasak, dan pemberdayaan UMKM lokal.</p>
+    </div>
+    <div class="timeline reveal-right">
+      <div class="tl-item">
+        <span class="tl-tag">Sejarah</span>
+        <h4>Dari lumbung pertanian ke ruang belajar</h4>
+        <p>Berawal dari kelompok tani Sembalun yang membuka kebun mereka untuk kunjungan sekolah pada tahun-tahun awal, sebelum tumbuh menjadi jejaring eduwisata desa.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-tag">Visi</span>
+        <h4>Sembalun sebagai laboratorium hidup</h4>
+        <p>Menjadi rujukan eduwisata pegunungan yang memadukan pendidikan, pelestarian alam, dan kesejahteraan warga secara berimbang.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-tag">Misi</span>
+        <h4>Belajar langsung dari sumbernya</h4>
+        <p>Menghadirkan pengalaman belajar pertanian, budaya, dan lingkungan langsung bersama petani, tokoh adat, dan pelaku UMKM setempat.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-tag">Nilai</span>
+        <h4>Gotong royong dan keberlanjutan</h4>
+        <p>Setiap kunjungan memberi manfaat balik ke warga — melalui homestay, kuliner, dan produk UMKM yang dikelola langsung oleh masyarakat Sembalun.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paket" id="paket">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Paket eduwisata</span>
+      <h2>Pilih pengalaman belajar yang sesuai</h2>
+      <p>Setiap paket dirancang bertingkat seperti sawah terasering Sembalun — mulai dari kunjungan singkat hingga program mendalam.</p>
+    </div>
+    <div class="terrace-grid stagger" id="paketGrid">
+      <div class="terrace-card reveal" style="--i:0">
+        <div class="terrace-steps"><span></span><span></span><span></span></div>
+        <h3>Paket Harian</h3>
+        <p>Jelajah kebun, susu sapi perah, dan panen sayur dalam satu hari penuh bersama pemandu lokal.</p>
+        <div class="terrace-meta"><span class="price">Mulai Rp 85rb</span><a href="#kontak">Detail →</a></div>
+      </div>
+      <div class="terrace-card reveal" style="--i:1">
+        <div class="terrace-steps"><span></span><span></span><span></span></div>
+        <h3>Paket Sekolah</h3>
+        <p>Kurikulum lapangan untuk kunjungan sekolah — pertanian, ekosistem, dan budaya Sasak.</p>
+        <div class="terrace-meta"><span class="price">Mulai Rp 65rb</span><a href="#kontak">Detail →</a></div>
+      </div>
+      <div class="terrace-card reveal" style="--i:2">
+        <div class="terrace-steps"><span></span><span></span><span></span></div>
+        <h3>Paket Komunitas</h3>
+        <p>Kegiatan kelompok bertema lingkungan, penanaman pohon, dan diskusi bersama petani.</p>
+        <div class="terrace-meta"><span class="price">Mulai Rp 95rb</span><a href="#kontak">Detail →</a></div>
+      </div>
+      <div class="terrace-card reveal" style="--i:3">
+        <div class="terrace-steps"><span></span><span></span><span></span></div>
+        <h3>Paket Keluarga</h3>
+        <p>Aktivitas santai untuk keluarga — memetik hasil kebun, kuliner khas, dan homestay 1 malam.</p>
+        <div class="terrace-meta"><span class="price">Mulai Rp 320rb</span><a href="#kontak">Detail →</a></div>
+      </div>
+      <div class="terrace-card reveal" style="--i:4">
+        <div class="terrace-steps"><span></span><span></span><span></span></div>
+        <h3>Paket Corporate</h3>
+        <p>Program outing dan CSR — pelatihan pertanian organik dan kontribusi langsung ke warga.</p>
+        <div class="terrace-meta"><span class="price">Custom</span><a href="#kontak">Detail →</a></div>
+      </div>
+      <div class="terrace-card reveal" style="--i:5">
+        <div class="terrace-steps"><span></span><span></span><span></span></div>
+        <h3>Paket Mendalam</h3>
+        <p>Tinggal 3 hari 2 malam, ikut siklus tani penuh dari tanam hingga panen bersama warga.</p>
+        <div class="terrace-meta"><span class="price">Mulai Rp 750rb</span><a href="#kontak">Detail →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tani" id="pertanian">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Edukasi pertanian</span>
+      <h2>Belajar dari tanah, bukan dari layar</h2>
+    </div>
+    <div class="tani-grid stagger">
+      <div class="tani-card reveal" style="--i:0">
+        <div class="tani-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBF6EC" stroke-width="2"><path d="M12 22V12M12 12C12 12 5 12 5 5C5 5 12 5 12 12ZM12 12C12 12 19 12 19 5C19 5 12 5 12 12Z"/></svg></div>
+        <h4>Menanam</h4>
+        <p>Praktik tanam langsung di lahan aktif petani mitra.</p>
+      </div>
+      <div class="tani-card reveal" style="--i:1">
+        <div class="tani-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBF6EC" stroke-width="2"><path d="M4 20L10 8L14 14L18 6L22 20H4Z"/></svg></div>
+        <h4>Panen</h4>
+        <p>Memetik hasil kebun sesuai musim bersama petani lokal.</p>
+      </div>
+      <div class="tani-card reveal" style="--i:2">
+        <div class="tani-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBF6EC" stroke-width="2"><rect x="4" y="6" width="16" height="14" rx="1"/><path d="M4 6L12 2L20 6"/></svg></div>
+        <h4>Greenhouse</h4>
+        <p>Mengenal teknologi tanam terkontrol untuk hasil optimal.</p>
+      </div>
+      <div class="tani-card reveal" style="--i:3">
+        <div class="tani-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBF6EC" stroke-width="2"><path d="M12 2C12 2 5 9 5 14A7 7 0 0019 14C19 9 12 2 12 2Z"/></svg></div>
+        <h4>Pertanian organik</h4>
+        <p>Praktik bertani tanpa bahan kimia yang ramah lingkungan.</p>
+      </div>
+      <div class="tani-card reveal" style="--i:4">
+        <div class="tani-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBF6EC" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12H16M12 8V16"/></svg></div>
+        <h4>Pengolahan hasil tani</h4>
+        <p>Mengolah hasil panen menjadi produk siap jual bersama UMKM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="homestay" id="homestay">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Homestay mitra</span>
+      <h2>Menginap di rumah warga Sembalun</h2>
+      <p>Dipilih dan dikelola langsung oleh warga lokal — pengalaman menginap seperti Airbnb, dengan sentuhan Sasak.</p>
+    </div>
+    <div class="hs-grid stagger" id="homestayGrid">
+      <div class="hs-card reveal" style="--i:0">
+        <div class="hs-photo"><span class="tag">Terdekat Rinjani</span></div>
+        <div class="hs-body">
+          <div class="hs-top"><h4>Homestay Bale Sasak</h4><div class="hs-rating">★ 4.9</div></div>
+          <p class="hs-loc">Sembalun Lawang · 4 kamar</p>
+          <div class="hs-foot"><span class="price">Rp 180rb <span>/ malam</span></span><a href="#kontak" class="btn btn-forest" style="padding:8px 18px; font-size:0.78rem;">Booking</a></div>
+        </div>
+      </div>
+      <div class="hs-card reveal" style="--i:1">
+        <div class="hs-photo"><span class="tag">View sawah</span></div>
+        <div class="hs-body">
+          <div class="hs-top"><h4>Homestay Bumi Terasering</h4><div class="hs-rating">★ 4.8</div></div>
+          <p class="hs-loc">Sembalun Bumbung · 3 kamar</p>
+          <div class="hs-foot"><span class="price">Rp 150rb <span>/ malam</span></span><a href="#kontak" class="btn btn-forest" style="padding:8px 18px; font-size:0.78rem;">Booking</a></div>
+        </div>
+      </div>
+      <div class="hs-card reveal" style="--i:2">
+        <div class="hs-photo"><span class="tag">Ramah keluarga</span></div>
+        <div class="hs-body">
+          <div class="hs-top"><h4>Homestay Sasak Heritage</h4><div class="hs-rating">★ 4.9</div></div>
+          <p class="hs-loc">Sembalun Timba Gading · 5 kamar</p>
+          <div class="hs-foot"><span class="price">Rp 210rb <span>/ malam</span></span><a href="#kontak" class="btn btn-forest" style="padding:8px 18px; font-size:0.78rem;">Booking</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kuliner" id="kuliner">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Kuliner khas</span>
+      <h2>Rasa Sembalun dari dapur warga</h2>
+    </div>
+    <div class="menu-row reveal">
+      <div class="menu-item">
+        <div><h4>Ares Sembalun</h4><p>Olahan batang pisang muda dengan bumbu rempah pegunungan.</p></div>
+        <div class="m-price">Rp 25rb</div>
+      </div>
+      <div class="menu-item">
+        <div><h4>Sate Bulayak</h4><p>Sate khas Lombok disajikan dengan lontong bulayak dan bumbu kacang.</p></div>
+        <div class="m-price">Rp 20rb</div>
+      </div>
+      <div class="menu-item">
+        <div><h4>Susu Sapi Segar Sembalun</h4><p>Langsung dari peternakan mitra, diminum hangat di ketinggian Rinjani.</p></div>
+        <div class="m-price">Rp 12rb</div>
+      </div>
+      <div class="menu-item">
+        <div><h4>Kopi Robusta Sembalun</h4><p>Biji kopi lokal hasil olahan kelompok tani, disangrai secara tradisional.</p></div>
+        <div class="m-price">Rp 15rb</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="event" id="event">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Event</span>
+      <h2>Workshop, festival, dan pelatihan</h2>
+      <p>Ikuti kegiatan terjadwal bersama komunitas dan petani Sembalun.</p>
+    </div>
+    <div class="event-grid stagger" id="eventGrid">
+      <div class="event-card reveal" style="--i:0">
+        <div class="event-banner"><div class="event-date"><div class="d">14</div><div class="m">Agt</div></div></div>
+        <div class="event-body">
+          <span class="event-cat">Workshop</span>
+          <h4>Workshop Pertanian Organik</h4>
+          <p>Belajar teknik kompos dan tanam organik langsung dari petani mitra.</p>
+          <div class="event-foot"><span>08.00 – selesai</span><a href="#kontak">Daftar →</a></div>
+        </div>
+      </div>
+      <div class="event-card reveal" style="--i:1">
+        <div class="event-banner"><div class="event-date"><div class="d">02</div><div class="m">Sep</div></div></div>
+        <div class="event-body">
+          <span class="event-cat">Festival</span>
+          <h4>Festival Panen Sembalun</h4>
+          <p>Perayaan panen tahunan dengan pasar tani, musik, dan kuliner khas.</p>
+          <div class="event-foot"><span>Sepanjang hari</span><a href="#kontak">Daftar →</a></div>
+        </div>
+      </div>
+      <div class="event-card reveal" style="--i:2">
+        <div class="event-banner"><div class="event-date"><div class="d">21</div><div class="m">Sep</div></div></div>
+        <div class="event-body">
+          <span class="event-cat">Pelatihan</span>
+          <h4>Pelatihan Pemandu Eduwisata</h4>
+          <p>Program sertifikasi bagi warga yang ingin menjadi pemandu lokal.</p>
+          <div class="event-foot"><span>09.00 – 15.00</span><a href="#kontak">Daftar →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog" id="blog">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Blog</span>
+      <h2>Cerita dari Sembalun</h2>
+    </div>
+    <div class="blog-grid stagger" id="blogGrid">
+      <div class="blog-card reveal" style="--i:0">
+        <div class="blog-photo"></div>
+        <div class="blog-body">
+          <span class="blog-tag">Wisata</span>
+          <h4>5 Aktivitas Wajib Coba Selain Mendaki Rinjani</h4>
+          <p>Sembalun punya lebih banyak cerita di luar jalur pendakian.</p>
+          <a href="#">Baca selengkapnya →</a>
+        </div>
+      </div>
+      <div class="blog-card reveal" style="--i:1">
+        <div class="blog-photo"></div>
+        <div class="blog-body">
+          <span class="blog-tag">Pertanian</span>
+          <h4>Mengenal Sistem Tanam Bergilir Petani Sembalun</h4>
+          <p>Kearifan lokal yang menjaga kesuburan tanah dari generasi ke generasi.</p>
+          <a href="#">Baca selengkapnya →</a>
+        </div>
+      </div>
+      <div class="blog-card reveal" style="--i:2">
+        <div class="blog-photo"></div>
+        <div class="blog-body">
+          <span class="blog-tag">Budaya</span>
+          <h4>Filosofi Rumah Adat Sasak di Sembalun</h4>
+          <p>Setiap bagian rumah punya makna yang masih dijaga hingga kini.</p>
+          <a href="#">Baca selengkapnya →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="galeri" id="galeri">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Galeri</span>
+      <h2>Sembalun dalam gambar</h2>
+    </div>
+    <div class="gallery-grid reveal" id="galleryGrid">
+      <div class="gallery-item g1" data-title="Punggungan Rinjani saat fajar"><span>Punggungan Rinjani saat fajar</span></div>
+      <div class="gallery-item g2" data-title="Kelas panen bersama petani"><span>Kelas panen bersama petani</span></div>
+      <div class="gallery-item g3" data-title="Homestay warga Sembalun"><span>Homestay warga Sembalun</span></div>
+      <div class="gallery-item g4" data-title="Sawah terasering Sembalun"><span>Sawah terasering Sembalun</span></div>
+      <div class="gallery-item g5" data-title="Kuliner khas Sasak"><span>Kuliner khas Sasak</span></div>
+      <div class="gallery-item g6" data-title="Festival panen tahunan"><span>Festival panen tahunan</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <div class="lightbox-box" id="lightboxBox"><span id="lightboxTitle"></span></div>
+</div>
+
+<section class="testi" id="testimoni">
+  <div class="wrap testi-wrap reveal">
+    <span class="eyebrow" style="justify-content:center;">Testimoni</span>
+    <div class="testi-quote" id="testiQuote">Anak-anak kami pulang dengan cerita panjang tentang menanam dan memerah susu sapi — bukan sekadar foto.</div>
+    <div class="testi-person" id="testiName">Rina Wulandari</div>
+    <div class="testi-role" id="testiRole">Guru pendamping, SDN 2 Mataram</div>
+    <div class="testi-dots" id="testiDots"></div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <h3>Rumah Eduwisata Sembalun</h3>
+        <p>Belajar, menikmati, dan mengalami Sembalun bersama warga, petani, dan pengelola wisata lokal.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="TikTok">TT</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Jelajahi</h5>
+        <a href="#tentang">Tentang kami</a>
+        <a href="#paket">Paket eduwisata</a>
+        <a href="#homestay">Homestay</a>
+        <a href="#kuliner">Kuliner</a>
+      </div>
+      <div class="foot-col">
+        <h5>Bantuan</h5>
+        <a href="#">Cara booking</a>
+        <a href="#">Syarat & ketentuan</a>
+        <a href="#">Pertanyaan umum</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kontak</h5>
+        <p>Sembalun Lawang, Lombok Timur, NTB</p>
+        <p>+62 812-0000-0000</p>
+        <p>halo@eduwisatasembalun.id</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Rumah Eduwisata Sembalun. Seluruh hak dilindungi.</span>
+      <span>Dibuat untuk memberdayakan masyarakat Sembalun</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/6281200000000" target="_blank" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.64 0-3.16-.47-4.44-1.28l-.32-.19-3.03.79.8-2.95-.2-.32A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.6c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4-.14 0-.3-.02-.46-.02s-.42.06-.64.3c-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
+</a>
+
+<script>
+// ====== KONFIGURASI API ======
+// Tempel URL Web App Google Apps Script (sama seperti di booking-eduwisata-sembalun.html)
+// Kosongkan ('') untuk tetap menampilkan konten contoh statis di bawah ini.
+const API_BASE_URL = '';
+const idr = n => 'Rp ' + Number(n || 0).toLocaleString('id-ID');
+
+async function apiGet(route){
+  const res = await fetch(`${API_BASE_URL}?route=${route}`);
+  const json = await res.json();
+  if(!json.success) throw new Error(json.message);
+  return json.data;
+}
+
+function renderPaketCards(items){
+  const grid = document.getElementById('paketGrid');
+  grid.innerHTML = '';
+  items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'terrace-card reveal in';
+    card.style.setProperty('--i', i);
+    card.innerHTML = `
+      <div class="terrace-steps"><span></span><span></span><span></span></div>
+      <h3>${item.name}</h3>
+      <p>${item.description || ''}</p>
+      <div class="terrace-meta"><span class="price">Mulai ${idr(item.price)}</span><a href="booking-eduwisata-sembalun.html">Detail →</a></div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderHomestayCards(items){
+  const grid = document.getElementById('homestayGrid');
+  grid.innerHTML = '';
+  items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'hs-card reveal in';
+    card.style.setProperty('--i', i);
+    card.innerHTML = `
+      <div class="hs-photo"><span class="tag">${item.location || 'Sembalun'}</span></div>
+      <div class="hs-body">
+        <div class="hs-top"><h4>${item.name}</h4><div class="hs-rating">★ ${item.rating || '4.8'}</div></div>
+        <p class="hs-loc">${item.location || '-'} · ${item.capacity || '-'} kamar</p>
+        <div class="hs-foot"><span class="price">${idr(item.price_per_night)} <span>/ malam</span></span><a href="booking-eduwisata-sembalun.html" class="btn btn-forest" style="padding:8px 18px; font-size:0.78rem;">Booking</a></div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderEventCards(items){
+  const grid = document.getElementById('eventGrid');
+  grid.innerHTML = '';
+  items.forEach((item, i) => {
+    const d = item.date ? new Date(item.date) : null;
+    const day = d ? d.getDate() : '--';
+    const month = d ? d.toLocaleDateString('id-ID', { month:'short' }) : '-';
+    const card = document.createElement('div');
+    card.className = 'event-card reveal in';
+    card.style.setProperty('--i', i);
+    card.innerHTML = `
+      <div class="event-banner"><div class="event-date"><div class="d">${day}</div><div class="m">${month}</div></div></div>
+      <div class="event-body">
+        <span class="event-cat">${item.category || 'Event'}</span>
+        <h4>${item.title}</h4>
+        <p>${item.description || ''}</p>
+        <div class="event-foot"><span>${item.time || 'Sepanjang hari'}</span><a href="booking-eduwisata-sembalun.html">Daftar →</a></div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderBlogCards(items){
+  const grid = document.getElementById('blogGrid');
+  grid.innerHTML = '';
+  items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'blog-card reveal in';
+    card.style.setProperty('--i', i);
+    card.innerHTML = `
+      <div class="blog-photo"></div>
+      <div class="blog-body">
+        <span class="blog-tag">${item.category || 'Artikel'}</span>
+        <h4>${item.title}</h4>
+        <p>${(item.content || '').slice(0, 90)}${item.content && item.content.length > 90 ? '…' : ''}</p>
+        <a href="#">Baca selengkapnya →</a>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderGalleryItems(items){
+  const grid = document.getElementById('galleryGrid');
+  grid.innerHTML = '';
+  const shapes = ['g1','g2','g3','g4','g5','g6'];
+  items.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'gallery-item ' + shapes[i % shapes.length];
+    div.dataset.title = item.title;
+    div.innerHTML = `<span>${item.title}</span>`;
+    div.addEventListener('click', () => {
+      lightboxBox.className = 'lightbox-box ' + shapes[i % shapes.length];
+      lightboxTitle.textContent = item.title;
+      lightbox.classList.add('open');
+    });
+    grid.appendChild(div);
+  });
+}
+
+async function loadDynamicContent(){
+  if(!API_BASE_URL) return; // tetap pakai konten statis di HTML
+  try {
+    const [paket, homestay, event, artikel, gallery] = await Promise.all([
+      apiGet('paket/list'), apiGet('homestay/list'), apiGet('event/list'), apiGet('artikel/list'), apiGet('gallery/list')
+    ]);
+    if(paket && paket.length) renderPaketCards(paket);
+    if(homestay && homestay.length) renderHomestayCards(homestay);
+    if(event && event.length) renderEventCards(event);
+    if(artikel && artikel.length) renderBlogCards(artikel);
+    if(gallery && gallery.length) renderGalleryItems(gallery);
+  } catch (err) {
+    console.error('Gagal memuat data API, tetap tampilkan konten statis:', err);
+  }
+}
+loadDynamicContent();
+
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('solid', window.scrollY > 60);
+  const sun = document.getElementById('parallaxSun');
+  const r1 = document.getElementById('parallaxRidge1');
+  const r2 = document.getElementById('parallaxRidge2');
+  const y = window.scrollY;
+  if(sun) sun.style.transform = `translate(-50%, ${y*0.25}px)`;
+  if(r1) r1.style.transform = `translateY(${y*0.08}px)`;
+  if(r2) r2.style.transform = `translateY(${y*0.04}px)`;
+});
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamburger.classList.remove('active');
+  mobileMenu.classList.remove('open');
+}));
+
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+const counters = document.querySelectorAll('[data-count]');
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      let cur = 0;
+      const step = Math.max(1, Math.ceil(target / 60));
+      const tick = () => {
+        cur += step;
+        if(cur >= target){ el.textContent = target.toLocaleString('id-ID'); return; }
+        el.textContent = cur.toLocaleString('id-ID');
+        requestAnimationFrame(tick);
+      };
+      tick();
+      cio.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => cio.observe(c));
+
+const testimonials = [
+  { quote: "Anak-anak kami pulang dengan cerita panjang tentang menanam dan memerah susu sapi — bukan sekadar foto.", name: "Rina Wulandari", role: "Guru pendamping, SDN 2 Mataram" },
+  { quote: "Menginap di homestay warga membuat kami benar-benar mengenal Sembalun, bukan sekadar transit ke Rinjani.", name: "Ahmad Fauzan", role: "Pendaki & wisatawan keluarga" },
+  { quote: "Program corporate outing kami jadi bermakna karena langsung berkontribusi ke petani lokal.", name: "Dewi Sartika", role: "HR Manager, PT Nusantara Hijau" }
+];
+let testiIndex = 0;
+const testiQuote = document.getElementById('testiQuote');
+const testiName = document.getElementById('testiName');
+const testiRole = document.getElementById('testiRole');
+const testiDots = document.getElementById('testiDots');
+testimonials.forEach((t, i) => {
+  const dot = document.createElement('button');
+  if(i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => showTesti(i));
+  testiDots.appendChild(dot);
+});
+function showTesti(i){
+  testiIndex = i;
+  const t = testimonials[i];
+  testiQuote.style.opacity = 0;
+  setTimeout(() => {
+    testiQuote.textContent = t.quote;
+    testiName.textContent = t.name;
+    testiRole.textContent = t.role;
+    testiQuote.style.opacity = 1;
+  }, 250);
+  [...testiDots.children].forEach((d, idx) => d.classList.toggle('active', idx === i));
+}
+testiQuote.style.transition = 'opacity .25s ease';
+setInterval(() => { showTesti((testiIndex + 1) % testimonials.length); }, 6000);
+
+const lightbox = document.getElementById('lightbox');
+const lightboxBox = document.getElementById('lightboxBox');
+const lightboxTitle = document.getElementById('lightboxTitle');
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    lightboxBox.className = 'lightbox-box ' + [...item.classList].find(c => c.startsWith('g'));
+    lightboxTitle.textContent = item.dataset.title;
+    lightbox.classList.add('open');
+  });
+});
+document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('open'); });
+</script>
+</body>
+</html>
